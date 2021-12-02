@@ -19,12 +19,7 @@ body {
     white-space: pre-wrap;
 }
 
-.time-block {
-    text-align: center;
-    border-radius: 15px;
-}
-
-.row {
+#content {
     white-space: pre-wrap;
     height: 80px;
     border-top: 1px solid white;
@@ -44,4 +39,10 @@ textarea {
     color: #000000;
     border-left: 1px solid black;
     padding: 10px;
+}
+
+.col {
+    padding: 50px;
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
