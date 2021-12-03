@@ -4,6 +4,9 @@ var dadjokesAPI = "https://icanhazdadjoke.com/"
 var darkjokesAPI = "https://v2.jokeapi.dev/joke/Dark?type=single"
 var programjokesAPI = "https://v2.jokeapi.dev/joke/Programming?type=single"
 
+// user name input
+var userName = document.querySelector(".userInput");
+
 // Text Area Variable
 var textareaEl = document.querySelector("#opentext")
 
@@ -14,6 +17,8 @@ var dadBtn = document.querySelector(".dadBtn")
 var chuckBtn = document.querySelector(".chuckBtn")
 var darkBtn = document.querySelector(".darkBtn")
 var programBtn = document.querySelector(".programBtn")
+
+
 
 
 // *CHUCK NORRIS SECTION*
