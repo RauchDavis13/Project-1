@@ -6,7 +6,7 @@ var programjokesAPI = "https://v2.jokeapi.dev/joke/Programming?type=single"
 
 // Text Area Variable
 var textareaEl = document.querySelector("#opentext")
-var jokeEl = textareaEl.textContent
+
 
 // Button Variables
 var favBtn = document.querySelector(".favoriteBtn")
@@ -89,13 +89,32 @@ async function getProgramJokes() {
     textareaEl.textContent = joke
 }
 
+// 
+var favoritesArray = JSON.parse(localStorage.getItem("joke")) || []
 
 // Function to add favorite joke to local storage
 function addFavorite(event) {
-    console.log(jokeEl)
+    event.preventDefault()
 
-    localStorage.setItem()
+    var jokeEl = textareaEl.textContent
+
+    // condition to not add joke when its already existed on local storage
+    if (favoritesArray.indexOf(jokeEl) !== -1) {
+        return
+    }
+
+    // pushes jokeEl to array
+    favoritesArray.push(jokeEl)
+    localStorage.setItem("joke", JSON.stringify(favoritesArray))
+    console.log(favoritesArray)
 }
+
+// function to clear local storage
+function clearLocal() {
+
+}
+
+
 
 
 
