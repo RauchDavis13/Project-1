@@ -15,8 +15,12 @@ body {
     border-bottom: 10px solid black;
 }
 
-.container {
+#main-thing {
     height: 300px;
+}
+
+.container {
+    height: 100px;
 }
 
 .description {

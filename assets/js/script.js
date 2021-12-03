@@ -6,12 +6,15 @@ var programjokesAPI = "https://v2.jokeapi.dev/joke/Programming?type=single"
 
 // Text Area Variable
 var textareaEl = document.querySelector("#opentext")
+var jokeEl = textareaEl.textContent
 
 // Button Variables
+var favBtn = document.querySelector(".favoriteBtn")
 var dadBtn = document.querySelector(".dadBtn")
 var chuckBtn = document.querySelector(".chuckBtn")
 var darkBtn = document.querySelector(".darkBtn")
 var programBtn = document.querySelector(".programBtn")
+
 
 // *CHUCK NORRIS SECTION*
 // Function to fetch and show response to textbox
@@ -87,7 +90,18 @@ async function getProgramJokes() {
 }
 
 
+// Function to add favorite joke to local storage
+function addFavorite(event) {
+    console.log(jokeEl)
+
+    localStorage.setItem()
+}
+
+
+
+
 // Event Listener for the buttons
+favBtn.addEventListener("click", addFavorite)
 chuckBtn.addEventListener("click", getChuckJokes)
 dadBtn.addEventListener("click", getDadJokes)
 darkBtn.addEventListener("click", getGeekJokes)
