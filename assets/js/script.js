@@ -111,7 +111,7 @@ function addFavorite(event) {
 
 // function to clear local storage
 function clearLocal() {
-
+    localStorage.removeItem("joke")
 }
 
 
