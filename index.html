@@ -16,29 +16,71 @@
         <p class="lead">A simple random joke generator to brighten up your day</p>
     </header>
 
-    <div class="container justify-content-center p-5">
+    <!-- Section for the title and the textbox for the jokes to show up -->
+    <section class="container justify-content-center p-5 col-md-8">
         <div class="Joke-Inator content level-item">
             <h1>Joke-Inator</h1>
         </div>
+        <!-- Textbox for the joke -->
         <div id="content" class="row">
             <textarea id="opentext" class="col-md-12 description border border-dark">
               </textarea>
         </div>
-        <div class="float-right">
-            <button class="button randomBtn is-primary level-item">
-                <span class="icon is-small">
-                    <i class="fa fa-random"></i>
-                </span>
-                <span>Randomize</span>
-            </button>
-        </div>
-    </div>
+    </section>
 
-    <div class="categories justify-content-center row p-5">
+
+    <!-- Section for users to pick the category of the joke -->
+    <section class="categories justify-content-center row p-5">
         <div class="section-title col-md-12 text-center">
             <h2>Categories</h2>
         </div>
-        <div class="categories row  col-md-10">
+        <div class="categories row  col-md-7">
+            <div class="col text-center bg-secondary">
+                <!-- Button for Chuck Norris Category -->
+                <button class="button chuckBtn btn-lg btn-info is-primary level-item">
+                    <span class="icon is-small">
+                        <i class="fa fa-random"></i>
+                    </span>
+                    <span>Chuck Norris Jokes</span>
+                </button>
+            </div>
+            <div class="col text-center bg-dark">
+                <!-- Button for Dad Jokes Category -->
+                <button class="button dadBtn btn-lg btn-info is-primary level-item">
+                    <span class="icon is-small">
+                        <i class="fa fa-random"></i>
+                    </span>
+                    <span>Dad Jokes</span>
+                </button>
+            </div>
+            <div class="col text-center bg-secondary">
+                <!-- Button for Dark Jokes Category -->
+                <button class="button darkBtn btn-lg btn-dark is-primary level-item">
+                    <span class="icon is-small">
+                        <i class="fa fa-random"></i>
+                    </span>
+                    <span>Dark Jokes</span>
+                </button>
+            </div>
+        </div>
+        <div class="categories row  col-md-7">
+            <div class="col text-center bg-light">
+                <!-- Button for Programming Jokes Category -->
+                <button class="button programBtn btn-lg btn-dark is-primary level-item">
+                    <span class="icon is-small">
+                        <i class="fa fa-random"></i>
+                    </span>
+                    <span>Programming Jokes</span>
+                </button>
+            </div>
+            <div class="col text-center bg-secondary">
+                2 of 3
+            </div>
+            <div class="col text-center bg-light">
+                3 of 3
+            </div>
+        </div>
+        <div class="categories row  col-md-7">
             <div class="col text-center bg-light">
                 1 of 3
             </div>
@@ -49,32 +91,11 @@
                 3 of 3
             </div>
         </div>
-        <div class="categories row  col-md-10">
-            <div class="col text-center bg-light">
-                1 of 3
-            </div>
-            <div class="col text-center bg-secondary">
-                2 of 3
-            </div>
-            <div class="col text-center bg-light">
-                3 of 3
-            </div>
-        </div>
-        <div class="categories row  col-md-10">
-            <div class="col text-center bg-light">
-                1 of 3
-            </div>
-            <div class="col text-center bg-secondary">
-                2 of 3
-            </div>
-            <div class="col text-center bg-light">
-                3 of 3
-            </div>
-        </div>
-    </div>
+    </section>
 
 
     <script src="assets/js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 
 </html>

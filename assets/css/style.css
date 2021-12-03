@@ -15,8 +15,14 @@ body {
     border-bottom: 10px solid black;
 }
 
+.container {
+    height: 300px;
+}
+
 .description {
     white-space: pre-wrap;
+    font-size: 25px;
+    height: 150px;
 }
 
 #content {
