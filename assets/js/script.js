@@ -19,8 +19,6 @@ var darkBtn = document.querySelector(".darkBtn")
 var programBtn = document.querySelector(".programBtn")
 
 
-
-
 // *CHUCK NORRIS SECTION*
 // Function to fetch and show response to textbox
 var getChuckJokes = function(data) {
