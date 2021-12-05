@@ -4,6 +4,7 @@ var dadjokesAPI = "https://icanhazdadjoke.com/"
 var darkjokesAPI = "https://v2.jokeapi.dev/joke/Dark?type=single"
 var programjokesAPI = "https://v2.jokeapi.dev/joke/Programming?type=single"
 
+
 // user name input
 var userName = document.querySelector(".userInput");
 
@@ -12,6 +13,7 @@ var textareaEl = document.querySelector("#opentext")
 
 
 // Button Variables
+var randomBtn = document.querySelector(".randomBtn")
 var favBtn = document.querySelector(".favoriteBtn")
 var dadBtn = document.querySelector(".dadBtn")
 var chuckBtn = document.querySelector(".chuckBtn")
@@ -94,6 +96,9 @@ async function getProgramJokes() {
 
 // 
 var favoritesArray = JSON.parse(localStorage.getItem("joke")) || []
+var favLength = favoritesArray.length;
+console.log(favoritesArray);
+console.log(favLength);
 
 // Function to add favorite joke to local storage
 function addFavorite(event) {
@@ -109,7 +114,25 @@ function addFavorite(event) {
     // pushes jokeEl to array
     favoritesArray.push(jokeEl)
     localStorage.setItem("joke", JSON.stringify(favoritesArray))
-    console.log(favoritesArray)
+    console.log(favoritesArray.length);
+}
+
+
+var randomJoke = function() {
+  
+    // looks for array index
+    function jokeInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+    // creates the random number range based on length of array
+    jokeNum = jokeInt(0, favLength);
+    console.log(jokeNum);
+    
+    // identifies favorite joke from array based on random number from jokeNum
+    var favJoke = favoritesArray.find((el, idx) => typeof el === "string" && idx === jokeNum);
+    console.log(favJoke);
+
+    textareaEl.textContent = favJoke;
 }
 
 // function to clear local storage
@@ -117,13 +140,9 @@ function clearLocal() {
     localStorage.removeItem("joke")
 }
 
-
-
-
-
-
 // Event Listener for the buttons
 favBtn.addEventListener("click", addFavorite)
+randomBtn.addEventListener("click", randomJoke)
 chuckBtn.addEventListener("click", getChuckJokes)
 dadBtn.addEventListener("click", getDadJokes)
 darkBtn.addEventListener("click", getGeekJokes)
