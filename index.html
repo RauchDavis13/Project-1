@@ -18,27 +18,51 @@
         <p class="lead">A simple random joke generator to brighten up your day</p>
     </header>
 
+    <!-- Side NavBar Menu -->
     <div id="mySidenav" class="sidenav bg-secondary">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div id="userName" class="container m-3 display-inline col-12 col-md 8">
-            <div id="name" class="row col-md-11">
+        <div id="userName" class="container m-3 col-12 col-md 8">
+            <div id="name" class="row col-md-11 bg-light">
                 <h3 id="userH" class="userH1 m-1 justify-content-center col-12">Tell The Joke-Inator Your Name</h3>
                 <div id="userBox" class="justify-content-center">
                     <input class="userInput m-1 col-12" type="text">
-                    <button id="nameBtn" class="float-right usernameBtn col-3">Save Username</button>
+                    <button id="nameBtn" class="float-right usernameBtn col-3 btn btn-info">Save Name</button>
                 </div>
             </div>
+            <div class="container m-3 col-12 col-md 8">
+                <div id="entered-name" class="row col-md-11 bg-light">
+                    <h3 id="userH" class="userH1 m-1 justify-content-center col-12">Welcome!
+                        <p id="entered-user"></p>
+                    </h3>
+                    <button class="float-right button randomFavBtn btn-info is-primary level-item">
+                        <span class="icon is-small">
+                            <i class="fa"></i>
+                        </span>
+                        <span>Click to get one of your favorite jokes</span>
+                    </button>
+                </div>
+            </div>
+            <div class="footer">
+                <button class="button btn-danger is-primary level-item justify-content-center" id="clearBtn">
+                    <span class="icon is-small">
+                        <i class="fa"></i>
+                    </span>
+                    <span>Clear Local Storage</span>
+                </button>
+            </div>
         </div>
+
+
     </div>
 
     <!-- Use any element to open the sidenav -->
-    <span onclick="openNav()" class="btn btn-outline-secondary navBtn">User Menu</span>
+    <span onclick="openNav()" class="btn btn-outline-dark navBtn">User Menu</span>
 
     <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
 
     <!-- Section for the title and the textbox for the jokes to show up -->
     <div id="main">
-        <section id="main-thing" class="container justify-content-center p-5 col-md-8">
+        <section id="main-thing" class="container justify-content-center p-5 col-md-8" 6>
             <div class="Joke-Inator content level-item">
                 <h1>Joke-Inator</h1>
             </div>
@@ -98,20 +122,23 @@
                 </div>
             </div>
             <div class="categories row  col-md-7">
-                <div class="col text-center bg-light">
+                <div class="col text-center bg-dark">
                     <!-- Button for Programming Jokes Category -->
-                    <button class="button programBtn btn-lg btn-dark is-primary level-item">
+                    <button class="button programBtn btn-lg is-primary level-item">
+                        <img src="assets/img/Programming Icon.png" class="icons">
                         <span class="icon is-small">
-                            <i class="fa fa-random"></i>
                         </span>
                         <span>Programming Jokes</span>
                     </button>
                 </div>
                 <div class="col text-center bg-secondary">
-                    2 of 3
-                </div>
-                <div class="col text-center bg-light">
-                    3 of 3
+                    <!-- Button for Random Jokes Category -->
+                    <button class="button randomBtn btn-lg is-primary level-item">
+                        <img src="assets/img/Random Icon.png" class="icons">
+                        <span class="icon is-small">
+                        </span>
+                        <span>Random Jokes</span>
+                    </button>
                 </div>
             </div>
     </div>

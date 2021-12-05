@@ -18,6 +18,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    height: 250px;
 }
 
 .userInput {
@@ -28,7 +29,23 @@ body {
     margin: 1em;
     padding: 1em;
     border: 3px black solid;
-    display: inline;
+    display: block;
+}
+
+#entered-name {
+    margin: 1em;
+    padding: 1em;
+    border: 3px black solid;
+    height: 200px;
+    display: none;
+}
+
+#userH {
+    font-size: 40px;
+}
+
+#entered-user {
+    font-size: 35px;
 }
 
 #main-thing {
@@ -85,6 +102,10 @@ textarea {
 
 
 /* SIDE NAV BAR */
+
+#clearBtn {
+    bottom: 0px
+}
 
 
 /* The side navigation menu */
