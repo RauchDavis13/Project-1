@@ -167,11 +167,8 @@ function addUser(event) {
 // Adds the favorite jokes into Local Storage Array
 var favoritesArray = JSON.parse(localStorage.getItem("joke")) || []
 var favLength = favoritesArray.length;
-<<<<<<< HEAD
 console.log(favoritesArray);
 console.log(favLength);
-=======
->>>>>>> James-branch
 
 // Function to add favorite joke to local storage
 function addFavorite(event) {
