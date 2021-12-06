@@ -5,7 +5,6 @@ var darkjokesAPI = "https://v2.jokeapi.dev/joke/Dark?type=single"
 var programjokesAPI = "https://v2.jokeapi.dev/joke/Programming?type=single"
 var randomjokesAPI = "https://v2.jokeapi.dev/joke/Miscellaneous?type=single"
 
-
 // user name input
 var userName = document.querySelector(".userInput");
 
@@ -23,7 +22,6 @@ var clearBtn = document.querySelector("#clearBtn")
 
 
 // Button Variables
-var randomBtn = document.querySelector(".randomBtn")
 var favBtn = document.querySelector(".favoriteBtn")
 var dadBtn = document.querySelector(".dadBtn")
 var chuckBtn = document.querySelector(".chuckBtn")
@@ -150,7 +148,6 @@ function addUser(event) {
 
     } else {
         userList = JSON.parse(localStorage.getItem("userlist"))
-        userList.push(user)
         localStorage.setItem("userlist", JSON.stringify(userList))
     }
 
@@ -167,8 +164,6 @@ function addUser(event) {
 // Adds the favorite jokes into Local Storage Array
 var favoritesArray = JSON.parse(localStorage.getItem("joke")) || []
 var favLength = favoritesArray.length;
-console.log(favoritesArray);
-console.log(favLength);
 
 // Function to add favorite joke to local storage
 function addFavorite(event) {
@@ -185,25 +180,7 @@ function addFavorite(event) {
     favoritesArray.push(jokeEl)
     localStorage.setItem("userlist", JSON.stringify(userList))
     localStorage.setItem("joke", JSON.stringify(favoritesArray))
-    console.log(favoritesArray.length);
-}
-
-
-var randomJoke = function() {
-  
-    // looks for array index
-    function jokeInt(min, max) {
-        return Math.floor(Math.random() * (max - min)) + min;
-    }
-    // creates the random number range based on length of array
-    jokeNum = jokeInt(0, favLength);
-    console.log(jokeNum);
-    
-    // identifies favorite joke from array based on random number from jokeNum
-    var favJoke = favoritesArray.find((el, idx) => typeof el === "string" && idx === jokeNum);
-    console.log(favJoke);
-
-    textareaEl.textContent = favJoke;
+    console.log(favoritesArray)
 }
 
 
@@ -233,9 +210,13 @@ function clearLocal() {
     localStorage.removeItem("user")
 }
 
+
+
+
+
+
 // Event Listener for the buttons
 favBtn.addEventListener("click", addFavorite)
-randomBtn.addEventListener("click", randomJoke)
 chuckBtn.addEventListener("click", getChuckJokes)
 dadBtn.addEventListener("click", getDadJokes)
 darkBtn.addEventListener("click", getGeekJokes)
