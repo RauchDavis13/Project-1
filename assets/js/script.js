@@ -166,8 +166,10 @@ function addUser(event) {
 
 
 // Adds the favorite jokes into Local Storage Array
-var favoritesArray = JSON.parse(localStorage.getItem("joke")) || []
-var favLength = favoritesArray.length;
+var favoritesArray = []
+var localfavorites = JSON.parse(localStorage.getItem("joke")) || []
+favoritesArray.append()
+var favLength = favoritesArray.length
 
 // Function to add favorite joke to local storage
 function addFavorite(event) {
@@ -185,6 +187,8 @@ function addFavorite(event) {
     localStorage.setItem("userlist", JSON.stringify(userList))
     localStorage.setItem("joke", JSON.stringify(favoritesArray))
     console.log(favoritesArray)
+
+
 }
 
 
@@ -192,20 +196,11 @@ function addFavorite(event) {
 // Function to get random jokes from favorites
 var randomFavJoke = function() {
 
-    // looks for array index
-    function jokeInt(min, max) {
-        return Math.floor(Math.random() * (max - min)) + min;
-    }
-    // creates the random number range based on length of array
-    jokeNum = jokeInt(0, favLength);
-    console.log(jokeNum);
-
     // identifies favorite joke from array based on random number from jokeNum
-    var favJoke = favoritesArray.find((el, idx) => typeof el === "string" && idx === jokeNum);
+    var favJoke = favoritesArray[Math.floor(Math.random() * favLength)];
     console.log(favJoke);
 
     textareaEl.textContent = favJoke;
-    jokeInt()
 }
 
 // function to clear local storage
@@ -213,6 +208,10 @@ function clearLocal() {
     localStorage.removeItem("joke")
     localStorage.removeItem("userlist")
     localStorage.removeItem("user")
+
+    sessionStorage.removeItem("joke")
+    sessionStorage.removeItem("userlist")
+    sessionStorage.removeItem("user")
 }
 
 
