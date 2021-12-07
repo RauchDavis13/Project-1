@@ -142,6 +142,11 @@ function addUser(event) {
         welcome2El.textContent = (nameInput.value + "'s  ")
         welcome2El.style.fontSize = "4.5rem";
 
+        if (!nameInput.value) {
+            console.log("NOOOOO")
+            welcome2El.textContent = ("")
+        }
+
     }
 
 
@@ -190,17 +195,23 @@ function addFavorite(event) {
     localStorage.setItem("joke", JSON.stringify(favoritesArray))
     console.log(favoritesArray)
 
-
+    favoritesArray = JSON.parse(localStorage.getItem("joke"))
+    favLength = favoritesArray.length;
 }
 
 
 
 // Function to get random jokes from favorites
 var randomFavJoke = function() {
+    favoritesArray = JSON.parse(localStorage.getItem("joke"))
+    favLength = favoritesArray.length;
+
 
     // identifies favorite joke from array based on random number from jokeNum
     var favJoke = favoritesArray[Math.floor(Math.random() * favLength)];
     console.log(favJoke);
+
+
 
     textareaEl.textContent = favJoke;
 }
