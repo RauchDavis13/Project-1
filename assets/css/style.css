@@ -36,7 +36,7 @@ body {
     margin: 1em;
     padding: 1em;
     border: 3px black solid;
-    height: 200px;
+    height: 300px;
     display: none;
 }
 
@@ -46,6 +46,10 @@ body {
 
 #entered-user {
     font-size: 35px;
+}
+
+#entered-user2 {
+    font-size: 4.5rem;
 }
 
 #main-thing {

@@ -7,6 +7,7 @@ var randomjokesAPI = "https://v2.jokeapi.dev/joke/Miscellaneous?type=single"
 
 // user name input
 var userName = document.querySelector(".userInput");
+var welcome2El = document.querySelector("#entered-user2")
 
 // Text Area Variable
 var textareaEl = document.querySelector("#opentext")
@@ -138,6 +139,9 @@ function addUser(event) {
         enterNameEl.style.display = "block";
 
         welcomeEl.textContent = nameInput.value
+        welcome2El.textContent = (nameInput.value + "'s  ")
+        welcome2El.style.fontSize = "4.5rem";
+
     }
 
 
@@ -201,6 +205,7 @@ var randomFavJoke = function() {
     console.log(favJoke);
 
     textareaEl.textContent = favJoke;
+    jokeInt()
 }
 
 // function to clear local storage
@@ -242,3 +247,6 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
 }
+
+
+// HELLO ITS ME
