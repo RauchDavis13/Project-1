@@ -148,11 +148,15 @@ function addUser(event) {
 
     // condition to not add user when its already existed on local storage
     if (userList.indexOf(user) !== -1) {
+
+        console.log(user)
         return
+
 
     } else {
         userList = JSON.parse(localStorage.getItem("userlist"))
         localStorage.setItem("userlist", JSON.stringify(userList))
+        console.log(user)
     }
 
     // add to local storage
@@ -166,10 +170,8 @@ function addUser(event) {
 
 
 // Adds the favorite jokes into Local Storage Array
-var favoritesArray = []
-var localfavorites = JSON.parse(localStorage.getItem("joke")) || []
-favoritesArray.append()
-var favLength = favoritesArray.length
+var favoritesArray = JSON.parse(localStorage.getItem("joke")) || []
+var favLength = favoritesArray.length;
 
 // Function to add favorite joke to local storage
 function addFavorite(event) {
