@@ -1,3 +1,12 @@
+var userHeader = JSON.parse(localStorage.getItem("user"))
+
+function welcomeHeader() {
+    welcome2El.textContent = (userHeader.user + "'s ")
+    console.log(userHeader.user)
+}
+
+window.onload = welcomeHeader
+
 // Variables for the APIs
 var chuckAPI = "https://api.chucknorris.io/jokes/random"
 var dadjokesAPI = "https://icanhazdadjoke.com/"
@@ -166,6 +175,8 @@ function addUser(event) {
 
     // add to local storage
     localStorage.setItem("user", JSON.stringify(user));
+
+
 
     welcomeUser()
 }
