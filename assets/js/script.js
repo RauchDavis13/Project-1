@@ -250,8 +250,15 @@ clearBtn.addEventListener("click", clearLocal)
 
 // SIDE NAV BAR 
 function openNav() {
+    const mediaQuery = window.matchMedia("(max-width: 450px)")
+
     document.getElementById("mySidenav").style.width = "500px";
     document.getElementById("main").style.marginLeft = "500px";
+
+    if (mediaQuery.matches) {
+        document.getElementById("mySidenav").style.width = "100%";
+        document.getElementById("main").style.marginLeft = "0%";
+    }
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
