@@ -257,7 +257,7 @@ function openNav() {
     document.querySelector(".header").style.marginLeft = "500px";
 
     if (mediaQuery.matches) {
-        document.getElementById("mySidenav").style.width = "100%";
+        document.getElementById("mySidenav").style.width = "100vw";
         document.getElementById("main").style.marginLeft = "0%";
     }
 }
