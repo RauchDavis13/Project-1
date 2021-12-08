@@ -254,6 +254,7 @@ function openNav() {
 
     document.getElementById("mySidenav").style.width = "500px";
     document.getElementById("main").style.marginLeft = "500px";
+    document.querySelector(".header").style.marginLeft = "500px";
 
     if (mediaQuery.matches) {
         document.getElementById("mySidenav").style.width = "100%";
@@ -265,6 +266,7 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
+    document.querySelector(".header").style.marginLeft = "0";
 }
 
 
