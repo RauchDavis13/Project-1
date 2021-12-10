@@ -1,5 +1,6 @@
 html {
     min-height: 100%;
+    width: 100%;
 }
 
 body {
@@ -36,7 +37,7 @@ body {
     margin: 1em;
     padding: 1em;
     border: 3px black solid;
-    height: 200px;
+    height: 300px;
     display: none;
 }
 
@@ -46,6 +47,10 @@ body {
 
 #entered-user {
     font-size: 35px;
+}
+
+#entered-user2 {
+    font-size: 4.5rem;
 }
 
 #main-thing {
@@ -159,24 +164,28 @@ textarea {
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+    color: red;
 }
 
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 
 #main {
-    transition: margin-left .5s;
+    transition: .5s;
     padding: 20px;
 }
 
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 
-@media screen and (max-height: 450px) {
+@media screen and (max-width: 450px) {
     .sidenav {
         padding-top: 15px;
     }
     .sidenav a {
         font-size: 18px;
+    }
+    .navBtn {
+        justify-content: center;
     }
 }

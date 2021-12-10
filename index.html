@@ -14,7 +14,7 @@
 
 <body>
     <header class="header bg-info">
-        <h1 class="display-3">Humour Me</h1>
+        <h1 class="display-3"><span id="entered-user2"></span>Humour</h1>
         <p class="lead">A simple random joke generator to brighten up your day</p>
     </header>
 
@@ -29,26 +29,27 @@
                     <button id="nameBtn" class="float-right usernameBtn col-3 btn btn-info">Save Name</button>
                 </div>
             </div>
+
             <div class="container m-3 col-12 col-md 8">
                 <div id="entered-name" class="row col-md-11 bg-light">
                     <h3 id="userH" class="userH1 m-1 justify-content-center col-12">Welcome!
                         <p id="entered-user"></p>
                     </h3>
-                    <button class="float-right button randomFavBtn btn-info is-primary level-item">
+                    <button class="button randomFavBtn btn-info is-primary level-item">
                         <span class="icon is-small">
                             <i class="fa"></i>
                         </span>
                         <span>Click to get one of your favorite jokes</span>
                     </button>
+                    <div class="mx-auto">
+                        <button class="button btn-danger is-primary level-item col-12" id="clearBtn">
+                            <span class="icon is-small">
+                                <i class="fa"></i>
+                            </span>
+                            <span>Clear Local Storage</span>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="footer">
-                <button class="button btn-danger is-primary level-item justify-content-center" id="clearBtn">
-                    <span class="icon is-small">
-                        <i class="fa"></i>
-                    </span>
-                    <span>Clear Local Storage</span>
-                </button>
             </div>
         </div>
 
@@ -56,7 +57,7 @@
     </div>
 
     <!-- Use any element to open the sidenav -->
-    <span onclick="openNav()" class="btn btn-outline-dark navBtn">User Menu</span>
+    <span onclick="openNav()" class="btn btn-primary navBtn">User Menu</span>
 
     <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
 
@@ -68,7 +69,7 @@
             </div>
             <!-- Textbox for the joke -->
             <div id="content" class="row">
-                <textarea id="opentext" class="col-md-12 description border border-dark">
+                <textarea id="opentext" disabled="disabled" class="col-md-12 description border border-dark">
               </textarea>
             </div>
         </section>
@@ -141,12 +142,14 @@
                     </button>
                 </div>
             </div>
+        </section>
     </div>
-    </section>
 
 
     <script src="assets/js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
+
+<!-- HELLO ITS ME -->
 
 </html>

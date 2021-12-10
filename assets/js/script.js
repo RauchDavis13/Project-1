@@ -1,3 +1,12 @@
+var userHeader = JSON.parse(localStorage.getItem("user"))
+
+function welcomeHeader() {
+    welcome2El.textContent = (userHeader.user + "'s ")
+    console.log(userHeader.user)
+}
+
+window.onload = welcomeHeader
+
 // Variables for the APIs
 var chuckAPI = "https://api.chucknorris.io/jokes/random"
 var dadjokesAPI = "https://icanhazdadjoke.com/"
@@ -7,6 +16,7 @@ var randomjokesAPI = "https://v2.jokeapi.dev/joke/Miscellaneous?type=single"
 
 // user name input
 var userName = document.querySelector(".userInput");
+var welcome2El = document.querySelector("#entered-user2")
 
 // Text Area Variable
 var textareaEl = document.querySelector("#opentext")
@@ -138,22 +148,35 @@ function addUser(event) {
         enterNameEl.style.display = "block";
 
         welcomeEl.textContent = nameInput.value
+        welcome2El.textContent = (nameInput.value + "'s  ")
+        welcome2El.style.fontSize = "4.5rem";
+
+        if (!nameInput.value) {
+            console.log("NOOOOO")
+            welcome2El.textContent = ("")
+        }
+
     }
 
 
 
     // condition to not add user when its already existed on local storage
     if (userList.indexOf(user) !== -1) {
+
+        console.log(user)
         return
+
 
     } else {
         userList = JSON.parse(localStorage.getItem("userlist"))
-        userList.push(user)
         localStorage.setItem("userlist", JSON.stringify(userList))
+        console.log(user)
     }
 
     // add to local storage
     localStorage.setItem("user", JSON.stringify(user));
+
+
 
     welcomeUser()
 }
@@ -182,24 +205,24 @@ function addFavorite(event) {
     localStorage.setItem("userlist", JSON.stringify(userList))
     localStorage.setItem("joke", JSON.stringify(favoritesArray))
     console.log(favoritesArray)
+
+    favoritesArray = JSON.parse(localStorage.getItem("joke"))
+    favLength = favoritesArray.length;
 }
 
 
 
 // Function to get random jokes from favorites
 var randomFavJoke = function() {
+    favoritesArray = JSON.parse(localStorage.getItem("joke"))
+    favLength = favoritesArray.length;
 
-    // looks for array index
-    function jokeInt(min, max) {
-        return Math.floor(Math.random() * (max - min)) + min;
-    }
-    // creates the random number range based on length of array
-    jokeNum = jokeInt(0, favLength);
-    console.log(jokeNum);
 
     // identifies favorite joke from array based on random number from jokeNum
-    var favJoke = favoritesArray.find((el, idx) => typeof el === "string" && idx === jokeNum);
+    var favJoke = favoritesArray[Math.floor(Math.random() * favLength)];
     console.log(favJoke);
+
+
 
     textareaEl.textContent = favJoke;
 }
@@ -209,6 +232,10 @@ function clearLocal() {
     localStorage.removeItem("joke")
     localStorage.removeItem("userlist")
     localStorage.removeItem("user")
+
+    sessionStorage.removeItem("joke")
+    sessionStorage.removeItem("userlist")
+    sessionStorage.removeItem("user")
 }
 
 
@@ -234,12 +261,38 @@ clearBtn.addEventListener("click", clearLocal)
 
 // SIDE NAV BAR 
 function openNav() {
+    const mediaQuery = window.matchMedia("(max-width: 450px)")
+
     document.getElementById("mySidenav").style.width = "500px";
     document.getElementById("main").style.marginLeft = "500px";
+    document.querySelector(".header").style.marginLeft = "500px";
+
+    if (mediaQuery.matches) {
+        document.getElementById("mySidenav").style.height = "400px";
+        document.getElementById("mySidenav").style.width = "100vw";
+        document.getElementById("main").style.marginTop = "400px";
+        document.querySelector(".header").style.marginTop = "400px";
+
+        document.getElementById("main").style.marginLeft = "0";
+        document.querySelector(".header").style.marginLeft = "0";
+    }
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 function closeNav() {
+    const mediaQuery = window.matchMedia("(max-width: 450px)")
+
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
+    document.querySelector(".header").style.marginLeft = "0";
+
+    if (mediaQuery.matches) {
+        document.getElementById("mySidenav").style.height = "0";
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginTop = "0";
+        document.querySelector(".header").style.marginTop = "0";
+    }
 }
+
+
+// HELLO ITS ME
