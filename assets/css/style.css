@@ -186,6 +186,6 @@ textarea {
         font-size: 18px;
     }
     .navBtn {
-        justify-content: center;
+        display: block;
     }
 }

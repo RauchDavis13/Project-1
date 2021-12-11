@@ -270,11 +270,12 @@ function openNav() {
     if (mediaQuery.matches) {
         document.getElementById("mySidenav").style.height = "400px";
         document.getElementById("mySidenav").style.width = "100vw";
-        document.getElementById("main").style.marginTop = "400px";
+        document.getElementById("main").style.marginTop = "100px";
         document.querySelector(".header").style.marginTop = "400px";
 
         document.getElementById("main").style.marginLeft = "0";
         document.querySelector(".header").style.marginLeft = "0";
+        document.querySelector(".navBtn").style.display = "none";
     }
 }
 
@@ -291,6 +292,7 @@ function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginTop = "0";
         document.querySelector(".header").style.marginTop = "0";
+        document.querySelector(".navBtn").style.display = "block";
     }
 }
 
