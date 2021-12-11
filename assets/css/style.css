@@ -171,7 +171,7 @@ textarea {
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 
 #main {
-    transition: margin-left .5s;
+    transition: .5s;
     padding: 20px;
 }
 
@@ -184,5 +184,8 @@ textarea {
     }
     .sidenav a {
         font-size: 18px;
+    }
+    .navBtn {
+        justify-content: center;
     }
 }

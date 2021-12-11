@@ -268,16 +268,30 @@ function openNav() {
     document.querySelector(".header").style.marginLeft = "500px";
 
     if (mediaQuery.matches) {
+        document.getElementById("mySidenav").style.height = "400px";
         document.getElementById("mySidenav").style.width = "100vw";
-        document.getElementById("main").style.marginLeft = "0%";
+        document.getElementById("main").style.marginTop = "400px";
+        document.querySelector(".header").style.marginTop = "400px";
+
+        document.getElementById("main").style.marginLeft = "0";
+        document.querySelector(".header").style.marginLeft = "0";
     }
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 function closeNav() {
+    const mediaQuery = window.matchMedia("(max-width: 450px)")
+
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
     document.querySelector(".header").style.marginLeft = "0";
+
+    if (mediaQuery.matches) {
+        document.getElementById("mySidenav").style.height = "0";
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginTop = "0";
+        document.querySelector(".header").style.marginTop = "0";
+    }
 }
 
 
